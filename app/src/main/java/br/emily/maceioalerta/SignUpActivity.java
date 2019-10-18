@@ -57,7 +57,8 @@ public class SignUpActivity extends AppCompatActivity {
         if (!Objects.requireNonNull(this.mNameView.getText()).toString().equals("")) {
             if (!Objects.requireNonNull(this.mEmailView.getText()).toString().equals("")) {
                 if (!Objects.requireNonNull(this.mPasswordView.getText()).toString().equals("")) {
-                    if (this.mPasswordView.getText().equals(this.mConfirmPasswordView.getText())) {
+                    if (Objects.requireNonNull(this.mPasswordView.getText()).toString()
+                            .equals(Objects.requireNonNull(this.mConfirmPasswordView.getText()).toString())) {
                         this.mAuth.createUserWithEmailAndPassword(Objects.requireNonNull(this.mEmailView.getText()).toString(),
                                 Objects.requireNonNull(this.mPasswordView.getText()).toString())
                                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
