@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "955947159467",
+    "firebase_url": "https://maceioalerta-6277b.firebaseio.com",
+    "project_id": "maceioalerta-6277b",
+    "storage_bucket": "maceioalerta-6277b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955947159467:android:a2b1add0eb0afaeadd8cee",
+        "android_client_info": {
+          "package_name": "br.emily.maceioalerta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955947159467-0ktoknfuk4a4rduftk2qckebt4qhjlpr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.emily.maceioalerta",
+            "certificate_hash": "e56ddb6c67e972daf0d50339e6191086354ea9f3"
+          }
+        },
+        {
+          "client_id": "955947159467-omop0o4hqt16dqbo585d61c9pisc1dhp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcDzMK-3hikAD-FOKvWL-_z2CM1AEi_Vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955947159467-omop0o4hqt16dqbo585d61c9pisc1dhp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
