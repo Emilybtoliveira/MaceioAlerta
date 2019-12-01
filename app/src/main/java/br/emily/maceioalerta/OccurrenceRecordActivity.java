@@ -1,14 +1,13 @@
 package br.emily.maceioalerta;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegistroOcorrenciaActivity extends AppCompatActivity {
+public class OccurrenceRecordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro_ocorrencia);
+        setContentView(R.layout.activity_occurrence_record);
     }
 }

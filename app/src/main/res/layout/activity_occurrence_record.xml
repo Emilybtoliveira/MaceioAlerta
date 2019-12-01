@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistroOcorrenciaActivity">
+    tools:context=".OccurrenceRecordActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,12 +22,13 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/tipo_ocorrencia">
+            android:hint="@string/occurrence_type">
 
             <AutoCompleteTextView
                 android:id="@+id/registro_tipo_dropdown"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:hint="@string/occurrence_type"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -35,7 +36,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rua">
+            android:hint="@string/street">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registro_rua_textfield"
@@ -49,7 +50,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bairro">
+            android:hint="@string/neighborhood">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registro_bairro_textfield"
@@ -63,7 +64,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descrição do Ocorrido"
+            android:hint="@string/occurrence_description"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -84,7 +85,7 @@
             android:paddingTop="8dp"
             android:paddingRight="32dp"
             android:paddingBottom="8dp"
-            android:text="@string/registrar"
+            android:text="@string/to_record"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             android:textColor="#ffffff"
             android:textStyle="normal"

@@ -9,4 +9,10 @@
     <string name="sign_in">Entrar</string>
     <string name="sign_out">Sair</string>
     <string name="forgot_password">Esqueci minha senha!</string>
+    <string name="record_occurrence">Registrar ocorrência</string>
+    <string name="occurrence_type">Tipo de Ocorrência</string>
+    <string name="street">Rua</string>
+    <string name="neighborhood">Bairro</string>
+    <string name="occurrence_description">Descrição do Ocorrido</string>
+    <string name="to_record">Registrar</string>
 </resources>
