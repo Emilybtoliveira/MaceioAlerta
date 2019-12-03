@@ -15,4 +15,5 @@
     <string name="neighborhood">Bairro</string>
     <string name="occurrence_description">Descrição do Ocorrido</string>
     <string name="to_record">Registrar</string>
+    <string name="sign_in_with_email">Entrar com e-mail</string>
 </resources>

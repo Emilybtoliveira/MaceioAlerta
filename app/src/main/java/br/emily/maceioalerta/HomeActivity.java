@@ -27,6 +27,14 @@ public class HomeActivity extends AppCompatActivity {
                 signOut();
             }
         });
+
+        MaterialButton mSignUpButton = findViewById(R.id.home_occurrence_button);
+        mSignUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), OccurrenceRecordActivity.class));
+            }
+        });
     }
 
     private void signOut() {
@@ -34,6 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Logout succeed.",
                 Toast.LENGTH_SHORT).show();
         finish();
-        startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+        startActivity(new Intent(getApplicationContext(), SignInHubActivity.class));
     }
 }

@@ -13,10 +13,11 @@
         android:roundIcon="@mipmap/app_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".OccurrenceRecordActivity"/>
-        <activity android:name=".SignInActivity">
+        <activity android:name=".OccurrenceRecordActivity" />
+        <activity android:name=".SignInHubActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />

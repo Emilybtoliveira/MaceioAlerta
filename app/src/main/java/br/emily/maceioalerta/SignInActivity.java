@@ -57,10 +57,7 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (this.mAuth.getCurrentUser() != null) {
-            finish();
-            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-        }
+
     }
 
     private void signIn() {
