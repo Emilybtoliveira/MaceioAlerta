@@ -16,4 +16,7 @@
     <string name="occurrence_description">Descrição do Ocorrido</string>
     <string name="to_record">Registrar</string>
     <string name="sign_in_with_email">Entrar com e-mail</string>
+    <string name="profile">Perfil</string>
+    <string name="occurrence">Ocorrências</string>
+    <string name="map">Mapa</string>
 </resources>

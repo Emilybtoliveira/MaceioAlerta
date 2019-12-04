@@ -19,10 +19,16 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/occurrence_type">
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
+                android:id="@+id/occurrencerecord_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/occurrence_type"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -32,7 +38,7 @@
             android:hint="@string/street">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registro_rua_textfield"
+                android:id="@+id/occurrencerecord_street"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage" />
@@ -46,7 +52,7 @@
             android:hint="@string/neighborhood">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registro_bairro_textfield"
+                android:id="@+id/occurrencerecord_neighborhood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textShortMessage" />
@@ -57,19 +63,21 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="top"
             android:hint="@string/occurrence_description"
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registro_descricao_textfield"
+                android:id="@+id/occurrencerecord_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textMultiLine" />
+                android:inputType="textMultiLine"
+                android:lines="10" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/registro_button"
+            android:id="@+id/occurrencerecord_record"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

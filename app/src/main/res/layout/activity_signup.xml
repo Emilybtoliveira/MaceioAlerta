@@ -27,7 +27,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/maceio_alerta_logo" />
+            app:srcCompat="@drawable/logo" />
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"

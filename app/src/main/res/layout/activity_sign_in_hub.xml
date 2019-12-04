@@ -28,7 +28,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/logo"
             android:scaleType="fitCenter"
-            android:src="@drawable/maceio_alerta_logo" />
+            android:src="@drawable/logo" />
 
 
         <LinearLayout
@@ -57,7 +57,7 @@
                 android:id="@+id/signin_sign_with_google"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:buttonSize="wide" />
+                app:buttonSize="standard" />
 
         </LinearLayout>
 

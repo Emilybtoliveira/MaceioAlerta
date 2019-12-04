@@ -34,8 +34,8 @@ public class SignInActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         this.mAuth = FirebaseAuth.getInstance();
 
-        mEmailView = findViewById(R.id.signin_email);
-        mPasswordView = findViewById(R.id.signin_password);
+        this.mEmailView = findViewById(R.id.signin_email);
+        this.mPasswordView = findViewById(R.id.signin_password);
 
         MaterialButton mSignInButton = findViewById(R.id.signin_sign_in);
         mSignInButton.setOnClickListener(new View.OnClickListener() {
@@ -54,14 +54,7 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
-
     private void signIn() {
-
         if (!Objects.requireNonNull(this.mEmailView.getText()).toString().equals("")) {
             if (!Objects.requireNonNull(this.mPasswordView.getText()).toString().equals("")) {
                 this.mAuth.signInWithEmailAndPassword(Objects.requireNonNull(this.mEmailView.getText()).toString(),

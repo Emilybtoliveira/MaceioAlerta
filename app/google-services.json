@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "955947159467-l9qcturgj6d815ravmse3rasul01ni0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.emily.maceioalerta",
+            "certificate_hash": "adb63cf563ebc7fdb2615d6285573f2d41b53213"
+          }
+        },
+        {
           "client_id": "955947159467-0ktoknfuk4a4rduftk2qckebt4qhjlpr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -36,7 +44,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "955947159467-omop0o4hqt16dqbo585d61c9pisc1dhp.apps.googleusercontent.com",
+              "client_id": "955947159467-r52nfhsmdfalrr6gpqgsa02ai435j5ot.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
