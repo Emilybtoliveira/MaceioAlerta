@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import br.emily.maceioalerta.fragments.MapsFragment;
 import br.emily.maceioalerta.fragments.OccurrencesFragment;
@@ -17,8 +19,12 @@ import br.emily.maceioalerta.fragments.ProfileFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+
     private BottomNavigationView mNavigationView;
+
     private boolean noReplaceFragment;
+
     private static final String MAPS_FRAGMENT = "MAPS_FRAGMENT";
     private static final String OCCURRENCE_FRAGMENT = "OCCURRENCES_FRAGMENT";
     private static final String PROFILE_FRAGMENT = "PROFILE_FRAGMENT";
@@ -28,11 +34,20 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        findViewById(R.id.containerForFragment);
+        this.mAuth = FirebaseAuth.getInstance();
+
         mNavigationView = findViewById(R.id.bottom_navigation);
         mNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         managerFragment(new MapsFragment(), "MAPS_FRAGMENT");
+    }
+
+    protected void onResume() {
+        super.onResume();
+        if (this.mAuth.getCurrentUser() == null) {
+            finish();
+            startActivity(new Intent(getApplicationContext(), SignInHubActivity.class));
+        }
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

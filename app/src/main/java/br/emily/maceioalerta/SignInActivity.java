@@ -57,35 +57,37 @@ public class SignInActivity extends AppCompatActivity {
     private void signIn() {
         if (!Objects.requireNonNull(this.mEmailView.getText()).toString().equals("")) {
             if (!Objects.requireNonNull(this.mPasswordView.getText()).toString().equals("")) {
-                this.mAuth.signInWithEmailAndPassword(Objects.requireNonNull(this.mEmailView.getText()).toString(),
+                this.mAuth.signInWithEmailAndPassword(Objects.requireNonNull(this.mEmailView.
+                                getText()).toString(),
                         Objects.requireNonNull(this.mPasswordView.getText()).toString())
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "Login succeed.",
+                                    Toast.makeText(getApplicationContext(), R.string.sign_in_ok,
                                             Toast.LENGTH_SHORT).show();
                                     finish();
-                                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                    startActivity(new Intent(getApplicationContext(),
+                                            HomeActivity.class));
 
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Login failed.",
+                                    Toast.makeText(getApplicationContext(), R.string.sign_in_error,
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }).addOnFailureListener(this, new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), e.getMessage(),
+                        Toast.makeText(getApplicationContext(), R.string.sign_in_error,
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
             } else {
-                Toast.makeText(getApplicationContext(), "Invalid password.",
+                Toast.makeText(getApplicationContext(), R.string.register_pass_empty,
                         Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Invalid email.",
+            Toast.makeText(getApplicationContext(), R.string.register_email_empty,
                     Toast.LENGTH_SHORT).show();
         }
     }

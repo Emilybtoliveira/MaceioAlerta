@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -58,18 +57,23 @@ public class SignUpActivity extends AppCompatActivity {
             if (!Objects.requireNonNull(this.mEmailView.getText()).toString().equals("")) {
                 if (!Objects.requireNonNull(this.mPasswordView.getText()).toString().equals("")) {
                     if (Objects.requireNonNull(this.mPasswordView.getText()).toString()
-                            .equals(Objects.requireNonNull(this.mConfirmPasswordView.getText()).toString())) {
-                        this.mAuth.createUserWithEmailAndPassword(Objects.requireNonNull(this.mEmailView.getText()).toString(),
+                            .equals(Objects.requireNonNull(this.mConfirmPasswordView.getText())
+                                    .toString())) {
+                        this.mAuth.createUserWithEmailAndPassword(Objects.requireNonNull(
+                                this.mEmailView.getText()).toString(),
                                 Objects.requireNonNull(this.mPasswordView.getText()).toString())
                                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(getApplicationContext(), "Registration succeed.",
+                                            Toast.makeText(getApplicationContext(),
+                                                    R.string.register_saved,
                                                     Toast.LENGTH_SHORT).show();
                                             FirebaseUser user = mAuth.getCurrentUser();
-                                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                                    .setDisplayName(Objects.requireNonNull(mNameView.getText()).toString())
+                                            UserProfileChangeRequest profileUpdates =
+                                                    new UserProfileChangeRequest.Builder()
+                                                    .setDisplayName(Objects.requireNonNull(
+                                                            mNameView.getText()).toString())
                                                     .build();
                                             if (user != null) {
                                                 user.updateProfile(profileUpdates)
@@ -77,15 +81,20 @@ public class SignUpActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
                                                                 if (task.isSuccessful()) {
-                                                                    Log.d("RegisterActivity", "User registered.");
+                                                                    Toast.makeText(
+                                                                            getApplicationContext(),
+                                                                            R.string.register_saved,
+                                                                            Toast.LENGTH_SHORT).show();
                                                                 }
                                                             }
                                                         });
                                             }
                                             finish();
-                                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                            startActivity(new Intent(getApplicationContext(),
+                                                    HomeActivity.class));
                                         } else {
-                                            Toast.makeText(getApplicationContext(), "Registration failed.",
+                                            Toast.makeText(getApplicationContext(),
+                                                    R.string.register_error,
                                                     Toast.LENGTH_SHORT).show();
                                         }
                                     }
@@ -94,26 +103,26 @@ public class SignUpActivity extends AppCompatActivity {
                                 .addOnFailureListener(this, new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Log.d("LoginActivity", "Register: OnFailure");
-                                        Toast.makeText(getApplicationContext(), e.getMessage(),
+                                        Toast.makeText(getApplicationContext(),
+                                                R.string.register_error,
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     } else {
-                        Toast.makeText(getApplicationContext(), "Passwords don't match.",
+                        Toast.makeText(getApplicationContext(), R.string.register_pass_not_match,
                                 Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(getApplicationContext(), "Invalid password.",
+                    Toast.makeText(getApplicationContext(), R.string.register_pass_empty,
                             Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(getApplicationContext(), "Invalid email.",
+                Toast.makeText(getApplicationContext(), R.string.register_email_empty,
                         Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Invalid name.",
+            Toast.makeText(getApplicationContext(), R.string.register_name_empty,
                     Toast.LENGTH_SHORT).show();
         }
     }

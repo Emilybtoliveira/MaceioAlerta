@@ -19,4 +19,18 @@
     <string name="profile">Perfil</string>
     <string name="occurrence">Ocorrências</string>
     <string name="map">Mapa</string>
+    <string name="register_saved">Novo usuário registrado.</string>
+    <string name="register_error">Novo usuário não registrado.</string>
+    <string name="register_name_empty">Por favor, informe seu nome.</string>
+    <string name="register_email_empty">Por favor, informe seu email.</string>
+    <string name="register_pass_empty">Por favor, informe uma senha.</string>
+    <string name="register_pass_not_match">Senhas diferentes.</string>
+    <string name="sign_in_ok">Login realizado com sucesso.</string>
+    <string name="sign_in_error">Não foi possível realizar o login.</string>
+    <string name="occurrence_saved">Sua ocorrência foi salva.</string>
+    <string name="occurrence_error">Sua ocorrência não foi salva.</string>
+    <string name="occurrence_type_empty">Por favor, selecione um tipo de ocorrência.</string>
+    <string name="occurrence_neighborhood_empty">Por favor, informe o bairro onde aconteceu.</string>
+    <string name="occurrence_description_empty">Por favor, descreva a ocorrência.</string>
+    <string name="float_button">Nova Ocorrência</string>
 </resources>

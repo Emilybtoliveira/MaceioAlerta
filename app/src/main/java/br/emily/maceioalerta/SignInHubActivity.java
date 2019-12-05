@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,7 +16,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,7 +35,6 @@ public class SignInHubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in_hub);
 
-        FirebaseApp.initializeApp(this);
         this.mAuth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -54,10 +52,19 @@ public class SignInHubActivity extends AppCompatActivity {
                 }
             }
         });
+
+        MaterialButton mSignInWithEmailButton = findViewById(R.id.signin_sign_in_with_email);
+        mSignInWithEmailButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+            }
+        });
     }
 
     @Override
-    protected void onStart () {
+    public void onStart() {
         super.onStart();
         if (this.mAuth.getCurrentUser() != null) {
             finish();
@@ -81,7 +88,8 @@ public class SignInHubActivity extends AppCompatActivity {
                 assert account != null;
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                Log.w("Google SignIn", "Google sign in failed", e);
+                Toast.makeText(getApplicationContext(), R.string.sign_in_error,
+                        Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -93,11 +101,13 @@ public class SignInHubActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Log.d("Google SignIn", "signInWithCredential:success");
+                            Toast.makeText(getApplicationContext(), R.string.sign_in_ok,
+                                    Toast.LENGTH_SHORT).show();
                             finish();
                             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         } else {
-                            Log.w("Google SignIn", "signInWithCredential:failure", task.getException());
+                            Toast.makeText(getApplicationContext(), R.string.sign_in_error,
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
